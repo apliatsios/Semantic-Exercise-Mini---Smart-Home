@@ -10,7 +10,7 @@ public class Activity {
     private String startTime;
     private String endTime;
     ArrayList<Observation> observations = new ArrayList<Observation>();//Array List of observations of Java Object Activity
-    //constructor
+    
     public Activity(String content, String startTime, String endTime) {
         this.content = content;
         this.startTime = startTime;
