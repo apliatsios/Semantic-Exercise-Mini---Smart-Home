@@ -1,4 +1,4 @@
-package javaapplication1;
+package SmartHome;
 import java.util.ArrayList;
 /**
  *

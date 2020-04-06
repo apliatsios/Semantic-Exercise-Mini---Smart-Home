@@ -1,5 +1,5 @@
 
-package javaapplication1;
+package SmartHome;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
