@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#"
+     xml:base="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:iptil-exercise1="http://www.semanticweb.org/apliatsios/ontologies/2020/2/iptil-exercise1#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#contains">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <rdfs:comment>&lt;Activty&gt; contains &lt;Observation&gt;</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#content -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#content">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#contentA -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#contentA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#end -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#end">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#endA -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#endA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#start -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#start">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#startA -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#startA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+        <contains rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationA1"/>
+        <contains rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationA2"/>
+        <contentA>PrepareHotTea</contentA>
+        <endA>2014-05-05T18:17:30.000</endA>
+        <startA>2014-05-05T18:10:50.000</startA>
+        <rdfs:comment>class Activity--&gt;individual no1</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+        <contains rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB1"/>
+        <contains rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB2"/>
+        <contains rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB3"/>
+        <contains rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB4"/>
+        <contentA>MakePhoneCall</contentA>
+        <endA>2014-05-05T18:27:34.000</endA>
+        <startA>2014-05-05T18:18:43.000</startA>
+        <rdfs:comment>class Activity--&gt;individual no2</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+        <contains rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationC1"/>
+        <contains rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationC2"/>
+        <contentA>DrinkTea</contentA>
+        <endA>2014-05-05T18:41:53.000</endA>
+        <startA>2014-05-05T18:27:18.000</startA>
+        <rdfs:comment>class Activity--&gt;individual no3</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Activity"/>
+        <contentA>PrepareDrugBox</contentA>
+        <endA>2014-05-05T18:55:40.000</endA>
+        <startA>2014-05-05T18:42:34.000</startA>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationA1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationA1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <content>Sugar</content>
+        <end>2014-05-05T18:14:54.000</end>
+        <start>2014-05-05T18:14:27.000</start>
+        <rdfs:comment>1st Observation of Activity1</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationA2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationA2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <content>TeaBag</content>
+        <end>2014-05-05T18:16:56.000</end>
+        <start>2014-05-05T18:16:35.000</start>
+        <rdfs:comment>2nd Observation of Activity1</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <content>Phone</content>
+        <end>2014-05-05T18:21:15.000</end>
+        <start>2014-05-05T18:20:53.000</start>
+        <rdfs:comment>1st Observation of Activity2</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <content>Phone</content>
+        <end>2014-05-05T18:20:43.000</end>
+        <start>2014-05-05T18:20:17.000</start>
+        <rdfs:comment>2nd Observation of Activity2</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <content>Phone</content>
+        <end>2014-05-05T18:20:55.000</end>
+        <start>2014-05-05T18:20:28.000</start>
+        <rdfs:comment>3rd Observation of Activity2</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationB4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <content>PhoneZone</content>
+        <end>2014-05-05T18:24:34.000</end>
+        <start>2014-05-05T18:24:13.000</start>
+        <rdfs:comment>4th Observation of Activity2</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationC1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationC1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <content>Cup</content>
+        <end>2014-05-05T18:35:15.000</end>
+        <start>2014-05-05T18:34:54.000</start>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationC2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#ObservationC2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/apliatsios/ontologies/2020/2/untitled-ontology-13#Observation"/>
+        <content>Spoon</content>
+        <end>2014-05-05T18:27:46.000</end>
+        <start>2014-05-05T18:27:18.000</start>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
