@@ -20,6 +20,8 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.util.iterator.ExtendedIterator;
+import org.topbraid.spin.arq.ARQ2SPIN;
+import org.topbraid.spin.arq.ARQFactory;
 
 /**
  *
@@ -77,7 +79,7 @@ public class JenaClass {
     public OntClass createActivityClass() {
         return this.getMyModel().getOntClass(this.getNS() + "Activity");
     }
-    
+   
     /**
      * Function printQueryData print the results of a SPARQL query
      *

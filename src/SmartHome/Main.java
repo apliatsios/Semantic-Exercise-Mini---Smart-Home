@@ -1,6 +1,8 @@
 package SmartHome;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import org.apache.jena.query.Query;
+import org.topbraid.spin.arq.ARQFactory;
 /**
  *
  * @author Antonis Pliatsios
