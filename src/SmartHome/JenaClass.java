@@ -1,4 +1,3 @@
-
 package SmartHome;
 
 import java.io.FileInputStream;
@@ -63,7 +62,7 @@ public class JenaClass {
      * @return the model from .owl file
      * @throws java.io.FileNotFoundException
      */
-    public OntModel makeSmartHomeModel(String fileName) throws FileNotFoundException {
+    public OntModel createModel(String fileName) throws FileNotFoundException {
         OntModel model = ModelFactory.createOntologyModel();
         //parse file 
 
@@ -75,11 +74,11 @@ public class JenaClass {
         }
         return model;
     }
-    
+
     public OntClass createActivityClass() {
         return this.getMyModel().getOntClass(this.getNS() + "Activity");
     }
-   
+
     /**
      * Function printQueryData print the results of a SPARQL query
      *
@@ -94,7 +93,9 @@ public class JenaClass {
     }
 
     /**
-     * Function findAllInstances find the values of all properties of Ontology class
+     * Function findAllInstances find the values of all properties of Ontology
+     * class
+     *
      * @param A Ontology Class
      * @return Array List of all instances of a class
      */
@@ -113,62 +114,59 @@ public class JenaClass {
     /**
      * Function populateClassObjects populate java Objects Activity,Observation
      * with values from .owl file
-     * @param instanceName is the name of current instance  
+     *
+     * @param instanceName is the name of current instance
      * @param activities is the Array List for activities
      * @param observations is the Array List for observations for current
      * Activity
      */
-    public void populateClassObjects(String instanceName, ArrayList<Activity> activities, ArrayList<Observation> observations) {
-        Activity A1 = new Activity();
-        Observation Ob1 = new Observation();
+    public void populateObject(String instanceName, ArrayList<Activity> activities, ArrayList<Observation> observations) {
+        Activity activity = new Activity();
         //Array List for all observations for current Activity
         ArrayList<String> myobservations = new ArrayList<>();
         //current Resource
-        Resource bfo2 = this.getMyModel().getResource(this.getNS() + instanceName);
-        String c = new String(); //property Activity-->content
-        String s = new String(); //property Activity-->start
-        String e = new String(); //property Activity-->end
+        Resource activityResource = this.getMyModel().getResource(this.getNS() + instanceName);
+        String content = new String(); //property Activity-->content
+        String start = new String(); //property Activity-->start
+        String end = new String(); //property Activity-->end
         //populate the values of object with properties content,start,end
-        for (StmtIterator i = bfo2.listProperties(); i.hasNext();) {
+        for (StmtIterator i = activityResource.listProperties(); i.hasNext();) {
             Statement stmt2 = i.next();
-            if (stmt2.getPredicate().getLocalName().equalsIgnoreCase("contentA")) {
-                c = stmt2.getObject().toString();//get values for contentA property
-            }
-            if (stmt2.getPredicate().getLocalName().equalsIgnoreCase("startA")) {
-                s = stmt2.getObject().toString();//get values for startA property
-            }
-            if (stmt2.getPredicate().getLocalName().equalsIgnoreCase("endA")) {
-                e = stmt2.getObject().toString(); //get values for startA property
-            }
-            int l = 0;//counter for import values in the correct position
-            if (stmt2.getPredicate().getLocalName().equalsIgnoreCase("contains")) {
-                myobservations.add(l, stmt2.getObject().toString());// get values for Object property contains
-                l++;
+            String predicate = stmt2.getPredicate().getLocalName();
+            String object = stmt2.getObject().toString();
+            if (predicate.equalsIgnoreCase("contentA")) {
+                content = object;//get values for contentA property
+            } else if (predicate.equalsIgnoreCase("startA")) {
+                start = object;//get values for startA property
+            } else if (predicate.equalsIgnoreCase("endA")) {
+                end = object; //get values for startA property
+            } //int l = 0;//counter for import values in the correct position
+            else if (predicate.equalsIgnoreCase("contains")) {
+                myobservations.add(object);// get values for Object property contains     
             }
         }
-        A1 = new Activity(c, s, e);//set values of Activity
-        activities.add(A1); //add Activity to ArrayList activities
-        String cOb = new String(); //property Observation-->content for current Activity
-        String sOb = new String(); //property Observation-->start for current Activity
-        String eOb = new String(); //property Observation-->end for current Activity
+        activity.setAll(content, start, end);//set values of Activity
+        activities.add(activity); //add Activity to ArrayList activities
+
         //looping the Array List to find current observations
         for (int j = 0; j < myobservations.size(); j++) {
-            Resource bfo3 = this.getMyModel().getResource(myobservations.get(j));
+            Resource objResource = this.getMyModel().getResource(myobservations.get(j));
+
             //populate the values of object with properties content,start,end
-            for (StmtIterator i = bfo3.listProperties(); i.hasNext();) {
+            for (StmtIterator i = objResource.listProperties(); i.hasNext();) {
                 Statement stmt3 = i.next();
-                if (stmt3.getPredicate().getLocalName().equalsIgnoreCase("content")) {
-                    cOb = stmt3.getObject().toString();
-                }
-                if (stmt3.getPredicate().getLocalName().equalsIgnoreCase("start")) {
-                    sOb = stmt3.getObject().toString();
-                }
-                if (stmt3.getPredicate().getLocalName().equalsIgnoreCase("end")) {
-                    eOb = stmt3.getObject().toString();
+                String predicate = stmt3.getPredicate().getLocalName();
+                String object = stmt3.getObject().toString();
+                if (predicate.equalsIgnoreCase("content")) {
+                    content = object;
+                } else if (predicate.equalsIgnoreCase("start")) {
+                    start = object;
+                } else if (predicate.equalsIgnoreCase("end")) {
+                    end = object;
                 }
             }
-            Observation Ob2 = new Observation(cOb, sOb, eOb); //set values of observation
-            A1.addObservation(Ob2); //add observation to the current Activity
+            Observation observation = new Observation(content, start, end); //set values of observation
+            activity.addObservation(observation); //add observation to the current Activity
         }
         myobservations.clear();//remove and wait for observations of the next Activity
     }
@@ -198,10 +196,10 @@ public class JenaClass {
 
         return queryString;
     }
-    
-     public String queryWithFilter() {
+
+    public String queryWithFilter() {
         //query for question 3.3
-        
+
         String queryString
                 = getSPARQLPrefixes()
                 + " SELECT ?ind ?content ?start ?end  WHERE { "

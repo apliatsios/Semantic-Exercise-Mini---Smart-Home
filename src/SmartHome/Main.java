@@ -21,7 +21,7 @@ public class Main {
         //run constructor for JenaClass J
         JenaClass J = new JenaClass();
         // call function makeSmartHomeModel to create my model
-        J.setMyModel(J.makeSmartHomeModel(fileName));
+        J.setMyModel(J.createModel(fileName));
         //create new Activity class for Jena Object J 
         J.setMyOnt(J.createActivityClass());
         // Array List with names of all Activities
@@ -33,7 +33,7 @@ public class Main {
         //Looping Array List
         for (int i = 0; i < results.size(); i++) {
             //Populate Objects by calling the fuction populateClassObjects 
-            J.populateClassObjects(results.get(i), activities, myObservations);//first parameter is the name of current Activity
+            J.populateObject(results.get(i), activities, myObservations);//first parameter is the name of current Activity
         }
         //Print all Activities        
         for (int i = 0; i < activities.size(); i++) {

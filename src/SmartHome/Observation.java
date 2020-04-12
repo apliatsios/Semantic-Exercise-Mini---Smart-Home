@@ -4,21 +4,25 @@
  * and open the template in the editor.
  */
 package SmartHome;
+
 /**
  *
  * @author Antonis Pliatsios
  */
 public class Observation {
+
     //properties
     private String content;
     private String startTime;
     private String endTime;
+
     //constructor
     public Observation(String content, String startTime, String endTime) {
         this.content = content;
         this.startTime = startTime;
         this.endTime = endTime;
     }
+
     //getters and setters
     public String getContent() {
         return content;
@@ -47,7 +51,7 @@ public class Observation {
     public Observation() {
     }
 
-    public void setObservation(String content, String startTime, String endTime) {
+    public void setAll(String content, String startTime, String endTime) {
         this.content = content;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -58,6 +62,7 @@ public class Observation {
     public String toString() {
         return "Observation{" + "content=" + content + ", startTime=" + startTime + ", endTime=" + endTime + '}';
     }
+
     //print data of current Observation 
     public void printInfo() {
         System.out.println("<content> :" + getContent());
