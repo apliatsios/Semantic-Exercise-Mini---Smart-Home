@@ -22,10 +22,6 @@ import org.apache.jena.util.iterator.ExtendedIterator;
 import org.topbraid.spin.arq.ARQ2SPIN;
 import org.topbraid.spin.arq.ARQFactory;
 
-/**
- *
- * @author Antonis Pliatsios
- */
 public class JenaClass {
 
     private OntModel myModel;
@@ -55,13 +51,6 @@ public class JenaClass {
         this.myOnt = myOnt;
     }
 
-    /**
-     * Function makeSmartHomeModel create Model from .owl file
-     *
-     * @param fileName name
-     * @return the model from .owl file
-     * @throws java.io.FileNotFoundException
-     */
     public OntModel createModel(String fileName) throws FileNotFoundException {
         OntModel model = ModelFactory.createOntologyModel();
         //parse file 
@@ -92,13 +81,6 @@ public class JenaClass {
         ResultSetFormatter.out(System.out, resultset, query);
     }
 
-    /**
-     * Function findAllInstances find the values of all properties of Ontology
-     * class
-     *
-     * @param A Ontology Class
-     * @return Array List of all instances of a class
-     */
     public ArrayList<String> findAllInstances() {
         ArrayList<String> result = new ArrayList<>();
         ExtendedIterator instances = getMyOnt().listInstances();
@@ -110,43 +92,34 @@ public class JenaClass {
         }
         return result;
     }
-
-    /**
-     * Function populateClassObjects populate java Objects Activity,Observation
-     * with values from .owl file
-     *
-     * @param instanceName is the name of current instance
-     * @param activities is the Array List for activities
-     * @param observations is the Array List for observations for current
-     * Activity
-     */
+ 
     public void populateObject(String instanceName, ArrayList<Activity> activities, ArrayList<Observation> observations) {
         Activity activity = new Activity();
         //Array List for all observations for current Activity
         ArrayList<String> myobservations = new ArrayList<>();
         //current Resource
         Resource activityResource = this.getMyModel().getResource(this.getNS() + instanceName);
-        String content = new String(); //property Activity-->content
-        String start = new String(); //property Activity-->start
-        String end = new String(); //property Activity-->end
+        String content = new String();
+        String start = new String(); 
+        String end = new String();
         //populate the values of object with properties content,start,end
         for (StmtIterator i = activityResource.listProperties(); i.hasNext();) {
             Statement stmt2 = i.next();
             String predicate = stmt2.getPredicate().getLocalName();
             String object = stmt2.getObject().toString();
             if (predicate.equalsIgnoreCase("contentA")) {
-                content = object;//get values for contentA property
+                content = object;
             } else if (predicate.equalsIgnoreCase("startA")) {
-                start = object;//get values for startA property
+                start = object;
             } else if (predicate.equalsIgnoreCase("endA")) {
-                end = object; //get values for startA property
+                end = object; 
             } //int l = 0;//counter for import values in the correct position
             else if (predicate.equalsIgnoreCase("contains")) {
-                myobservations.add(object);// get values for Object property contains     
+                myobservations.add(object); 
             }
         }
-        activity.setAll(content, start, end);//set values of Activity
-        activities.add(activity); //add Activity to ArrayList activities
+        activity.setAll(content, start, end);
+        activities.add(activity); 
 
         //looping the Array List to find current observations
         for (int j = 0; j < myobservations.size(); j++) {
@@ -165,10 +138,10 @@ public class JenaClass {
                     end = object;
                 }
             }
-            Observation observation = new Observation(content, start, end); //set values of observation
-            activity.addObservation(observation); //add observation to the current Activity
+            Observation observation = new Observation(content, start, end); 
+            activity.addObservation(observation); 
         }
-        myobservations.clear();//remove and wait for observations of the next Activity
+        myobservations.clear();
     }
 
     public String queryForAllObservations() {

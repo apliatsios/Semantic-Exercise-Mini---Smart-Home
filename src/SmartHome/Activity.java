@@ -2,10 +2,6 @@ package SmartHome;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Antonis Pliatsios
- */
 public class Activity {
 
     //Object properties
@@ -23,7 +19,6 @@ public class Activity {
     public Activity() {
     }
 
-    //getters ans setters
     public String getContent() {
         return content;
     }
@@ -71,7 +66,6 @@ public class Activity {
         observations.add(Ob);
     }
 
-    //print all data for Activity
     public void printInfo() {
         System.out.println("<content>" + getContent());
         System.out.println("<startTime>" + getStartTime());

@@ -1,29 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package SmartHome;
 
-/**
- *
- * @author Antonis Pliatsios
- */
 public class Observation {
 
-    //properties
     private String content;
     private String startTime;
     private String endTime;
 
-    //constructor
+  
     public Observation(String content, String startTime, String endTime) {
         this.content = content;
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
-    //getters and setters
     public String getContent() {
         return content;
     }
